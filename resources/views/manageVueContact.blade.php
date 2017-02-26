@@ -13,12 +13,12 @@
                 <div class="row">
                     <div class="col-xs-3">
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#search-item">
-                            Search Item
+                            Search Contacts
                         </button>
                     </div>
                     <div class=" col-xs-3">
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#create-item">
-                            Create Item
+                            Create Contact
                         </button>
                     </div>
                     <div class="col-xs-3">
@@ -36,7 +36,7 @@
 
     </div>
     <br>
-    <!-- Item Listing -->
+    <!-- Contact Listing -->
     <table class="table table-bordered">
         <tr>
             <th>Name</th>
@@ -86,7 +86,7 @@
         </ul>
     </nav>
 
-    <!-- Create Item Modal -->
+    <!-- Create Contact Modal -->
     <div class="modal fade" id="create-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -145,7 +145,7 @@
         </div>
     </div>
 
-    <!-- Edit Item Modal -->
+    <!-- Edit Contact Modal -->
     <div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -197,7 +197,7 @@
         </div>
     </div>
 
-    <!-- Search Item Modal -->
+    <!-- Search Contact Modal -->
     <div class="modal fade" id="search-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
