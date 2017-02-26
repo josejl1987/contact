@@ -65,14 +65,14 @@ var myVue=new Vue({
 
         getVueItems: function(page){
 
-            this.$http.get('/group').then((response) => {
+            this.$http.get('group').then((response) => {
                 this.$set('groups', response.data);
             this.deleteGroupID=this.groups[0];
 
         });
 
 
-            this.$http.get('/vuecontact?page='+page,{params:this.searchFilter}).then((response) => {
+            this.$http.get('vuecontact?page='+page,{params:this.searchFilter}).then((response) => {
                 this.$set('items', response.data.data.data);
             this.$set('pagination', response.data.pagination);
         });
@@ -81,7 +81,7 @@ var myVue=new Vue({
         searchItem: function(){
             this.searchFilter = this.newItem;
 
-            this.$http.get('/vuecontact/search',{params:this.searchFilter}).then((response) => {
+            this.$http.get('vuecontact/search',{params:this.searchFilter}).then((response) => {
                 this.changePage(this.pagination.current_page);
             this.newItem = {'name':'','surname':'','email':'','phone':'','groups':''};
             $("#search-item").modal('hide');
@@ -96,7 +96,7 @@ var myVue=new Vue({
             var input = this.newGroup;
             var groupIDs=[];
                    input.groups=groupIDs;
-            this.$http.post('/group',input).then((response) => {
+            this.$http.post('group',input).then((response) => {
                 this.changePage(this.pagination.current_page);
             this.newGroup = {'name':''};
             $("#add-group").modal('hide');
@@ -115,7 +115,7 @@ var myVue=new Vue({
               groupIDs.push(this.newItem.groups[i]['id']);
            }
             input.groups=groupIDs;
-            this.$http.post('/vuecontact',input).then((response) => {
+            this.$http.post('vuecontact',input).then((response) => {
                 this.changePage(this.pagination.current_page);
             this.newItem = {'name':'','surname':'','email':'','phone':'','groups':''};
             $("#create-item").modal('hide');
@@ -129,7 +129,7 @@ var myVue=new Vue({
 
 
         deleteItem: function(item) {
-            this.$http.delete('/vuecontact/' + item.id).then((response) => {
+            this.$http.delete('vuecontact/' + item.id).then((response) => {
                 this.changePage(this.pagination.current_page);
 
             toastr.success('Contact Deleted Successfully.', 'Success Alert', {timeOut: 5000});
@@ -140,7 +140,7 @@ var myVue=new Vue({
 
         deleteGroup: function(item){
 
-            this.$http.delete('/group/'+this.deleteGroupID.id).then((response) => {
+            this.$http.delete('group/'+this.deleteGroupID.id).then((response) => {
                 this.changePage(this.pagination.current_page);
             $("#delete-group").modal('hide');
             this.deleteGroupID=groups[0];
@@ -171,7 +171,7 @@ var myVue=new Vue({
             }
             input.groups=groupIDs;
 
-            this.$http.put('/vuecontact/'+id,input).then((response) => {
+            this.$http.put('vuecontact/'+id,input).then((response) => {
                 this.changePage(this.pagination.current_page);
             this.fillItem = {'id':'','name':'','surname':'','email':'','phone':'','groups':''};
             $("#edit-item").modal('hide');

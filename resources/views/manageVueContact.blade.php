@@ -331,6 +331,6 @@
 
 <script src="https://unpkg.com/vue-select@1.3.3"></script>
 
-<script type="text/javascript" src="/js/vueContact.js"></script>
+<script type="text/javascript" src="js/vueContact.js"></script>
 
 @endsection
