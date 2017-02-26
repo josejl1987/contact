@@ -2,11 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
-use App\Group;
 use Illuminate\Http\Request;
-
-use App\Http\Controllers\Controller;
-
 use Illuminate\Support\Facades\DB;
 
 class VueContactController extends Controller

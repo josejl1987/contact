@@ -16,16 +16,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 
 
-
-//contact Routes
-  Route::group(['middleware'=> 'web'],function(){
-  Route::post('contact/{id}/update','\App\Http\Controllers\ContactController@update');
-  Route::get('contact/{id}/delete','\App\Http\Controllers\ContactController@destroy');
-  Route::get('contact/{id}/deleteMsg','\App\Http\Controllers\ContactController@DeleteMsg');
-  Route::resource('contact','\App\Http\Controllers\ContactController');
-
-  });
-
 //group Routes
 Route::group(['middleware'=> 'web'],function(){
   Route::resource('group','\App\Http\Controllers\GroupController');

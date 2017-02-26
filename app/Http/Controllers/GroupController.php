@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\App;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Group;
 use Amranidev\Ajaxis\Ajaxis;
+use App\Group;
+use Illuminate\Http\Request;
 use URL;
 
 /**

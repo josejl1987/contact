@@ -3,39 +3,35 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Group.
- *
- * @author  The scaffold-interface created at 2017-02-24 04:51:53pm
- * @link  https://github.com/amranidev/scaffold-interface
+ * Model class for Groups table.
  */
 class Group extends Model
 {
-	
-	
+    
+    
     public $timestamps = false;
     
     protected $table = 'groups';
 
-	
+    
 
-	/**
-     * contact.
+    /**
+     * Many Many relation definition.
      *
-     * @return  \Illuminate\Support\Collection;
+     * @return \Illuminate\Support\Collection;
      */
     public function contacts()
     {
-        return $this->belongsToMany('App\Contact','contacts_groups');
+        return $this->belongsToMany('App\Contact', 'contacts_groups');
     }
 
     /**
      * Assign a contact.
      *
      * @param  $contact
-     * @return  mixed
+     * @return mixed
      */
     public function assignContact($contact)
     {
@@ -45,13 +41,10 @@ class Group extends Model
      * Remove a contact.
      *
      * @param  $contact
-     * @return  mixed
+     * @return mixed
      */
     public function removeContact($contact)
     {
         return $this->contacts()->detach($contact);
     }
-
-
-
 }
