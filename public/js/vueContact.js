@@ -69,13 +69,21 @@ var myVue=new Vue({
                 this.$set('groups', response.data);
             this.deleteGroupID=this.groups[0];
 
-        });
+        }, (response) => {
+                toastr.error('Could not fetch groups info. Please check your database settings.', 'Alert', {timeOut: 50000});
+
+            });
 
 
             this.$http.get('vuecontact?page='+page,{params:this.searchFilter}).then((response) => {
                 this.$set('items', response.data.data.data);
             this.$set('pagination', response.data.pagination);
-        });
+        },
+            (response) => {
+                toastr.error('Could not fetch contacts info. Please check your database settings.', 'Alert', {timeOut: 50000});
+
+            });
+
         },
 
         searchItem: function(){
