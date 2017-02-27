@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateContactsTable extends Migration
 {
@@ -18,7 +18,8 @@ class CreateContactsTable extends Migration
             $table->string('name',255);
             $table->string('surname',255);
             $table->string('email',255);
-            $table->string('phone',255);
+            $table->string('phone',255)->nullable();
+
             $table->increments('id');
         });
     }

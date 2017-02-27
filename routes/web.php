@@ -11,9 +11,7 @@
 |
 */
 
-Auth::routes();
 
-Route::get('/', 'HomeController@index');
 
 
 //group Routes
@@ -21,7 +19,6 @@ Route::group(['middleware'=> 'web'],function(){
   Route::resource('group','\App\Http\Controllers\GroupController');
   Route::post('group/{id}/update','\App\Http\Controllers\GroupController@update');
   Route::get('group/{id}/delete','\App\Http\Controllers\GroupController@destroy');
-  Route::get('group/{id}/deleteMsg','\App\Http\Controllers\GroupController@DeleteMsg');
 });
 
 
