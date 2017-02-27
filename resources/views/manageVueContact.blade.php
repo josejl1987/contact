@@ -179,6 +179,13 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="title">Phone:</label>
+                            <input type="text" name="phone" class="form-control" v-model="fillItem.phone"/>
+                            <span v-if="formErrorsUpdate['phone']" class="error text-danger">@{{ formErrorsUpdate['phone'] }}</span>
+                        </div>
+
+
+                        <div class="form-group">
                             <label for="title">Groups:</label>
                             <v-select id="editGroup" :value.sync="fillItem.groups" label="name" multiple
                                       :options="groups"/>
