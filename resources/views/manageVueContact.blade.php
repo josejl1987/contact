@@ -252,7 +252,7 @@
 
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-success">Create</button>
+                            <button type="submit" class="btn btn-success">Search</button>
                         </div>
 
                     </form>
